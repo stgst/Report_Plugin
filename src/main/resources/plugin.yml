@@ -1,0 +1,9 @@
+name: Report
+version: '${project.version}'
+main: io.xiung.report.main
+api-version: 1.19
+commands:
+  report:
+    description: Report command.
+    usage: /<command> (player) (reason)
+    permission: report.command.report
