@@ -11,20 +11,20 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.Objects;
 
-import static io.xiung.report.command.menu;
+import static io.xiung.report.command.confirm_menu;
 
 public class event implements Listener {
 
     @EventHandler
     public void onInventoryClick(final InventoryDragEvent e){
-        if(e.getInventory().equals(menu)){
+        if(e.getInventory().equals(confirm_menu)){
             e.setCancelled(true);
         }
     }
 
     @EventHandler
     public void onInventoryClick(final InventoryClickEvent e){
-        if(!e.getInventory().equals(menu)) return;
+        if(!e.getInventory().equals(confirm_menu)) return;
 
         e.setCancelled(true);
 

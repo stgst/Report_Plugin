@@ -8,12 +8,13 @@ public final class main extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        getCommand("report").setExecutor(new command());
-        getServer().getPluginManager().registerEvents(new event(), this);
         config = this.getConfig();
         config.addDefault("webhookURL", "URL");
+        config.addDefault("cooldowns", 600);
         config.options().copyDefaults(true);
         saveConfig();
+        getCommand("report").setExecutor(new command(this));
+        getServer().getPluginManager().registerEvents(new event(), this);
     }
 
     @Override
